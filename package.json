@@ -1,0 +1,19 @@
+{
+    "name": "DADN211",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mqtt": "^4.2.8",
+        "nodemon": "^2.0.13",
+        "socket.io": "^4.2.0"
+    }
+}

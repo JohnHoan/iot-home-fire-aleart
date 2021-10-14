@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Home Safety</title>
+        <link rel="stylesheet" href="home.css" />
+        <!-- Boxicons CDN Link -->
+        <link
+            href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class="bx bx-home-alt"></i>
+                <div class="logo_name">Home</div>
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a href="#">
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-message-alt-add"></i>
+                        <span class="links_name">Add device</span>
+                    </a>
+                    <span class="tooltip">Add device</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-report"></i>
+                        <span class="links_name">Report</span>
+                    </a>
+                    <span class="tooltip">Report</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-message-rounded-dots"></i>
+                        <span class="links_name">Message</span>
+                    </a>
+                    <span class="tooltip">Message</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-help-circle"></i>
+                        <span class="links_name">Help</span>
+                    </a>
+                    <span class="tooltip">Help</span>
+                </li>
+                <li class="profile">
+                    <a href="#">
+                        <i class="bx bx-log-out" id="log_out"></i>
+                        <span
+                            style="
+                                text-align: center;
+                                color: white;
+                                font-size: 20px;
+                            "
+                            >Log out</span
+                        >
+                    </a>
+                    <span class="tooltip">Log out</span>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div>Hello John Hoan</div>
+
+            <div class="card">
+                <div class="app">
+                    <h2 class="room">Kitchen Zone</h2>
+                    <div class="current-time">
+                        <i class="bx bx-timer"></i>
+                        <span id="time-now">12.00</span>
+                    </div>
+                    <div class="temp">
+                        <i class="bx bx-brightness-half"></i>
+                        <span id="temp-res">Temperature: 51°C</span>
+                    </div>
+                    <div class="humidity">
+                        <i class="bx bx-water"></i>
+                        <span id="humid-res">Humidity: 60%</span>
+                    </div>
+                    <div class="gas_checking">
+                        <i class="bx bx-check-shield"></i>
+                        <span id="gas-res">Gas Checking: Safety</span>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <div class="light">
+                    <h3>Light Alert</h3>
+                    <img
+                        id="light_img"
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/93927/pic_bulboff.gif"
+                        class="light-img"
+                    />
+                    <div class="container-light-btn">
+                        <div class="toggle-btn">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaker">
+                    <h3>Buzzer Alert</h3>
+                    <img
+                        id="speaker_img"
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/93927/pic_bulboff.gif"
+                        class="light-img"
+                    />
+                    <div class="container-light-btn">
+                        <div class="toggle-btn">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-progress">
+                <div class="progress-bar">
+                    <h2>Fire Possibility</h2>
+                    <div class="progress">
+                        <div class="progression" data-progress="95">90%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/client.js"></script>
+    </body>
+</html>
