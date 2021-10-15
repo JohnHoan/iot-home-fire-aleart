@@ -105,6 +105,11 @@ client.on('connect', function () {
             console.log(err);
         }
     });
+    client.subscribe('NguyenHoan/feeds/bk-iot-speaker', function (err) {
+        if (err) {
+            console.log(err);
+        }
+    });
 });
 
 client.on('message', function (topic, message) {
@@ -116,6 +121,8 @@ client.on('message', function (topic, message) {
         io.emit('data-led', data);
     } else if (topic == 'NguyenHoan/feeds/bk-iot-gas') {
         io.emit('data-gas', data);
+    } else if (topic == 'NguyenHoan/feeds/bk-iot-speaker') {
+        io.emit('data-speaker', data);
     }
 });
 

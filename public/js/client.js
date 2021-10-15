@@ -42,8 +42,6 @@ socket.on('data-gas', (data) => {
 });
 
 function receiveHandler(temp, gasCheck) {
-    console.log(temp);
-    console.log(gasCheck);
     let sendLed = '0';
     let sendBuzzer = '0';
     if (temp > 70 || gasCheck == 1) {
@@ -65,6 +63,31 @@ function receiveHandler(temp, gasCheck) {
     }
     return;
 }
+
+btnLight.addEventListener('click', () => {
+    let sendLed = '0';
+    if (btnLight.classList.contains('active')) {
+        turnOff(btnLight, light);
+        socket.emit('send-led', sendLed);
+    } else {
+        sendLed = '1';
+        turnOn(btnLight, light);
+        socket.emit('send-led', sendLed);
+    }
+});
+
+btnSpeaker.addEventListener('click', () => {
+    let sendBuzzer = '0';
+    if (btnSpeaker.classList.contains('active')) {
+        turnOff(btnSpeaker, speaker);
+        socket.emit('send-buzzer', sendBuzzer);
+    } else {
+        sendBuzzer = '255';
+        turnOn(btnSpeaker, speaker);
+        socket.emit('send-buzzer', sendBuzzer);
+    }
+});
+
 function turnOn(btn, bulb) {
     if (btn.classList.contains('active')) return;
     btn.classList.toggle('active');
