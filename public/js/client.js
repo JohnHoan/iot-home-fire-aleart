@@ -32,6 +32,7 @@ socket.on('data-temp-humid', (data) => {
     receiveHandler(temp, gasCheck);
     tempUpdate(temp);
     humidUpdate(humid);
+    alertPossibility(temp);
 });
 
 socket.on('data-gas', (data) => {
@@ -39,6 +40,28 @@ socket.on('data-gas', (data) => {
     gasCheck = Number(receivedData['data']);
     receiveHandler(temp, gasCheck);
     gasUpdate(gasCheck);
+});
+
+socket.on('data-speaker', (data) => {
+    let receivedData = JSON.parse(data);
+    let dataSpeaker = Number(receivedData['data']);
+    if (!btnLight.classList.contains('active') && dataSpeaker == 0) return;
+    if (btnLight.classList.contains('active') && dataSpeaker == 0)
+        turnOff(btnSpeaker, speaker);
+    if (btnLight.classList.contains('active') && dataSpeaker != 0) return;
+    if (!btnLight.classList.contains('active') && dataSpeaker != 0)
+        turnOn(btnSpeaker, speaker);
+});
+
+socket.on('data-led', (data) => {
+    let receivedData = JSON.parse(data);
+    let dataLed = Number(receivedData['data']);
+    if (!btnLight.classList.contains('active') && dataLed == 0) return;
+    if (btnLight.classList.contains('active') && dataLed == 0)
+        turnOff(btnLight, light);
+    if (btnLight.classList.contains('active') && dataLed != 0) return;
+    if (!btnLight.classList.contains('active') && dataLed != 0)
+        turnOn(btnLight, light);
 });
 
 function receiveHandler(temp, gasCheck) {
@@ -146,4 +169,3 @@ function alertPossibility(num) {
 }
 
 setInterval(timeUpdate, 1000);
-alertPossibility(70);

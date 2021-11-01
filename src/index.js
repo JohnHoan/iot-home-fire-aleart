@@ -14,7 +14,7 @@ app.use(express.static(publicDirectoryPath));
 
 const client = mqtt.connect('mqtt://io.adafruit.com', {
     username: 'NguyenHoan',
-    password: 'aio_AXpp12n5SisVyHz4ymAOGEbtWaaM',
+    password: 'aio_ZRXy64054lmtZlS12rdVw77QSO7M',
 });
 
 const pubLed = (data) => {
