@@ -1,0 +1,56 @@
+/* canvas {
+    border: 3px solid black;
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+    border-radius: 20px;
+    float: left;
+} */
+
+#_canvas_temp {
+    border: 3px solid black;
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+    border-radius: 20px;
+    float: left;
+}
+
+#_canvas_humid {
+    border: 3px solid black;
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+    border-radius: 20px;
+    float: left;
+}
+
+#chartContainer {
+    margin: 10px;
+    margin-top: 20px;
+    height: 300px;
+    width: 90%;
+    border-radius: 10px;
+    float: left;
+}
+.average {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(68, 68, 68);
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    vertical-align: middle;
+    float: left;
+}
+.average h3 {
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+}
+.average h2 {
+    padding-top: 25px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
